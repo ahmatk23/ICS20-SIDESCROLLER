@@ -1,3 +1,10 @@
+function setup() {
+  createCanvas(400, 400);
+}
+
+function draw() {
+  background(220);
+}
 
 var person;
 
@@ -7,12 +14,22 @@ function setup() {
 
 }
 
-var x = 0;
+function keyPressed() {
+	if (key == ' ') {
+	var jump= createVector(0, -1);
+		person.applyForce(jump);
+	
+	}
+	
+}
 
 
 function draw() {
 	background(51);
-	translate(-100, 0);
+	
+	translate(-person.pos.x+50, 0);
+
+	
 	person.update();
 	person.display();
 
