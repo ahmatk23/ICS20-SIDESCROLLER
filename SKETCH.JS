@@ -16,9 +16,8 @@ function setup() {
 
 function keyPressed() {
 	if (key == ' ') {
-	var jump= createVector(0, -1);
+	var jump = createVector(0 , -5);
 		person.applyForce(jump);
-	
 	}
 	
 }
@@ -29,8 +28,12 @@ function draw() {
 	
 	translate(-person.pos.x+50, 0);
 
+	var gravity=createVector(0, 0.1);
+	person.applyForce(gravity);
+	
 	
 	person.update();
+	person.edges();
 	person.display();
 
 	fill(255, 0, 100);
